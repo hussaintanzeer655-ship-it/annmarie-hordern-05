@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang=\"en\">
+<head>
+  <meta charset=\"utf-8\"/>
+  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"/>
+  <title>Gallery - Annmarie</title>
+  <style>
+    :root{--bg:#0a0f14;--card:#11172a;--fg:#e8f0ff;--trace:#3a8bd6}
+    *{box-sizing:border-box}html,body{margin:0;height:100%}body{font-family:Arial, sans-serif;background:var(--bg);color:var(--fg)}
+    header{padding:1rem;border-bottom:1px solid #294067;background:rgba(4,8,20,.95)}
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:10px;padding:1rem}
+    .tile{background:var(--card);border:1px solid #2a315f;border-radius:.4rem;padding:.6rem;display:flex;align-items:center;justify-content:center;min-height:100px;cursor:pointer}
+    .tile:focus{outline:2px solid var(--trace)}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Annmarie Hordern</h1>
+  </header>
+  <section class="grid" aria-label="gallery" id="grid">
+    <button class="tile" tabindex="0" data-i="1">Item 1</button>
+    <button class="tile" tabindex="0" data-i="2">Item 2</button>
+    <button class="tile" tabindex="0" data-i="3">Item 3</button>
+    <button class="tile" tabindex="0" data-i="4">Item 4</button>
+  </section>
+  <script>
+    const grid=document.getElementById('grid');grid.addEventListener('click',e=>{const t=e.target.closest('.tile');if(!t)return;const i=t.dataset.i;alert('Preview '+i);});
+    grid.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){const t=e.target.closest('.tile');if(t){const i=t.dataset.i;alert('Preview '+i);}}});
+  </script>
+</body>
+</html>
