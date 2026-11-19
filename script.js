@@ -1,0 +1,1 @@
+"use strict";const grid=document.getElementById('grid');grid.addEventListener('click',e=>{const t=e.target.closest('.tile');if(!t)return;const i=t.dataset.i;alert('Preview '+i);});grid.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){const t=e.target.closest('.tile');if(t){const i=t.dataset.i;alert('Preview '+i);}}});
